@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.gaurk.trackofftest.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/search_bar_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:layout_toStartOf="@+id/settingsImageView"
+                android:hint="Search or type URL"
+                android:inputType="textAutoComplete"
+                android:singleLine="true" />
+
+            <ImageView
+                android:id="@+id/settingsImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/search_bar_edittext"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/search_bar_edittext"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp"
+                android:src="@drawable/icons_settings_48" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+    <WebView
+        android:id="@+id/search_webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/card_view" />
+
+    <!--<EditText-->
+        <!--android:id="@+id/op"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:visibility="gone"-->
+        <!--android:layout_below="@+id/card_view" />-->
+
+    <RelativeLayout
+        android:id="@+id/loading_scripts_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#fff"
+        android:padding="5dp">
+
+        <ProgressBar
+            android:id="@+id/scripts_progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:id="@+id/loading_scripts_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/scripts_progress_bar"
+            android:layout_alignTop="@+id/scripts_progress_bar"
+            android:layout_toEndOf="@+id/scripts_progress_bar"
+            android:text="Loading scripts..."
+            android:textStyle="italic" />
+    </RelativeLayout>
+</RelativeLayout>
+
